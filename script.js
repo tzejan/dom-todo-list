@@ -15,13 +15,15 @@ function add_task_list(task_name) {
 
     new_task_item.textContent = task_name;
     new_task_item.addEventListener("click", toggle_done);
+    new_task_item.classList.add("animated");
+    new_task_item.classList.add("bounce");
 
     todo_list.appendChild(new_task_item);
     console.log(tasks);
 }
 
-var toggle_done = function(e) {
-    var list_item = e.target;
+function toggle_done(event) {
+    var list_item = event.target;
     if (list_item.classList.contains("done")) {
         list_item.classList.remove("done");
     } else {
@@ -29,10 +31,10 @@ var toggle_done = function(e) {
     }
 };
 
-add_task.addEventListener("click", function(e) {
+add_task.addEventListener("click", function(event) {
     var new_task = document.getElementById("new_task");
     new_task_name = new_task.value;
-    console.log(e);
+    console.log(event);
 
     if (new_task_name.length === 0) {
         return;
@@ -45,18 +47,18 @@ add_task.addEventListener("click", function(e) {
 
 var new_task = document.getElementById("new_task");
 
-new_task.addEventListener("keypress", function(event) {
-    if (event.charCode === 13) {
+new_task.addEventListener("keypress", function(mouseEvent) {
+    if (mouseEvent.charCode === 13) {
         if (new_task.value.length === 0) {
             return;
         }
-        var event = new MouseEvent("click", {
+        var mouseEvent = new MouseEvent("click", {
             view: window,
             bubbles: true,
             cancelable: true
         });
-        add_task.dispatchEvent(event);
-        console.log("dispatch event " + event);
+        add_task.dispatchEvent(mouseEvent);
+        console.log("dispatch event " + mouseEvent);
     }
 });
 
