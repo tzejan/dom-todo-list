@@ -1,0 +1,31 @@
+.done{
+    text-decoration: line-through;
+    color: #666666;
+}
+
+ul{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1em;
+}
+
+input {
+    font-size: 1em;
+    padding: 8px;
+}
+
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 4px;
+}
