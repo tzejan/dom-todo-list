@@ -3,6 +3,7 @@ var tasks = ["buy milk", "eat dinner", "nail javascript"];
 var todo_list = document.getElementById("todo-list");
 
 var add_task = document.getElementById("add_task");
+var new_task = document.getElementById("new_task");
 
 function update_list() {
     for (task of tasks) {
@@ -29,10 +30,9 @@ function toggle_done(event) {
     } else {
         list_item.classList.add("done");
     }
-};
+}
 
 add_task.addEventListener("click", function(event) {
-    var new_task = document.getElementById("new_task");
     new_task_name = new_task.value;
     console.log(event);
 
@@ -45,10 +45,8 @@ add_task.addEventListener("click", function(event) {
     new_task.value = "";
 });
 
-var new_task = document.getElementById("new_task");
-
-new_task.addEventListener("keypress", function(mouseEvent) {
-    if (mouseEvent.charCode === 13) {
+new_task.addEventListener("keypress", function(keypressEvent) {
+    if (keypressEvent.charCode === 13) {
         if (new_task.value.length === 0) {
             return;
         }
